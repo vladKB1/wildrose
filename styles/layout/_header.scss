@@ -1,0 +1,63 @@
+.header .container {
+	@include flex(center, center, column);
+	padding: 16px 72px 14px;
+}
+
+.layout-3-column {
+	@include flex(space-between);
+	width: 100%;
+}
+
+.search {
+	width: 16px;
+	height: 16px;
+	background: no-repeat center url("../../assets/icons/Search.svg");
+}
+.logo {
+	width: 118px;
+	height: 20px;
+	background: no-repeat center url("../../assets/images/WildRoseLogo.png");
+}
+
+.header-buttons {
+	@include flex();
+	column-gap: 20px;
+
+	.login {
+		width: 16px;
+		height: 16px;
+		background: no-repeat center url("../../assets/icons/Auth.svg");
+	}
+
+	.favorites {
+			@include flex();
+			column-gap: 6px;
+		
+			&__value {}
+	
+			&__icon {
+				width: 16px;
+				height: 16px;
+				background: no-repeat center url("../../assets/icons/favorites.svg");
+			}
+	}
+
+	.basket {
+		width: 16px;
+		height: 15px;
+		background: no-repeat center url("../../assets/icons/Basket.svg");
+	}
+}
+
+
+
+.main-menu-container {
+}
+.main-menu {
+
+		&__item {}
+}
+.sub-menu {
+
+		&__item {}
+}

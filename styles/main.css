@@ -69,4 +69,104 @@ select {
   font-family: Roboto;
   src: url("../../assets/fonts/Roboto-Regular.ttf");
 }
+
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 16px 72px 14px;
+}
+
+.layout-3-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.search {
+  width: 16px;
+  height: 16px;
+  background: no-repeat center url("../../assets/icons/Search.svg");
+}
+
+.logo {
+  width: 118px;
+  height: 20px;
+  background: no-repeat center url("../../assets/images/WildRoseLogo.png");
+}
+
+.header-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.header-buttons .login {
+  width: 16px;
+  height: 16px;
+  background: no-repeat center url("../../assets/icons/Auth.svg");
+}
+
+.header-buttons .favorites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 6px;
+          column-gap: 6px;
+}
+
+.header-buttons .favorites__icon {
+  width: 16px;
+  height: 16px;
+  background: no-repeat center url("../../assets/icons/favorites.svg");
+}
+
+.header-buttons .basket {
+  width: 16px;
+  height: 15px;
+  background: no-repeat center url("../../assets/icons/Basket.svg");
+}
 /*# sourceMappingURL=main.css.map */
