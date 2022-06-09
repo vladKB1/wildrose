@@ -2,3 +2,21 @@
 	font-family: Roboto;
 	src: url('../../assets/fonts/Roboto-Regular.ttf');
 }
+
+.title {
+	font-family: "Roboto", "Verdana", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	text-transform: uppercase;
+
+	color: $title-color;
+}
+
+h3.title {
+	line-height: 16px;
+	text-transform: none;
+	text-align: left;
+}
