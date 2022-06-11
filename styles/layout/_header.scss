@@ -3,13 +3,19 @@
 	z-index: 2;
 }
 
-.header .container {
+.header-container {
 	@include flex(center, center, column);
 	row-gap: 23px;
 	padding: 16px 72px 14px;
 
 	background-color: white;
 	border-bottom: 1px solid #EAE8E4;
+
+	@media (max-width: #{$medium - 1 + px}) {
+		row-gap: 0;
+		@include adaptive-value("padding-left", 72, 12, $medium, $small);
+		@include adaptive-value("padding-right", 72, 12, $medium, $small);
+	}
 }
 
 .layout-3-column {
@@ -17,56 +23,106 @@
 	width: 100%;
 }
 
+.burger-button {
+	display: none;
+	width: 12px;
+	height: 12px;
+	background: no-repeat left url("../../assets/icons/Burger.svg");
+	cursor: pointer;
+
+	&_active {
+		background: no-repeat left url("../../assets/icons/Close.svg");
+	}
+
+	@media (max-width: #{$medium - 1 + px}) {
+		display: block;
+	}
+}
+
 .search {
-	width: 103px;
+	width: 16px;
 	height: 16px;
 	background: no-repeat left url("../../assets/icons/Search.svg");
 	cursor: pointer;
 }
+
 .logo {
 	width: 118px;
-	height: 20px;
-	background: no-repeat center url("../../assets/images/WildRoseLogo.png");
+	height: 20px;	
 	cursor: pointer;
+
+	@media (max-width: #{$medium - 1 + px}) {
+		width: 94px;
+		height: 16px;
+	}
+}
+
+.login {
+	width: 16px;
+	height: 16px;
+	background: no-repeat center url("../../assets/icons/Auth.svg");
+	cursor: pointer;
+}
+
+.navigation-buttons {
+	@include flex();
+	column-gap: 9px;
+	width: 127px;
+
+	@media (max-width: #{$medium - 1 + px}) {		
+		width: 79px;		
+	}
 }
 
 .header-buttons {
 	@include flex();
 	column-gap: 20px;
 
-	.login {
-		width: 16px;
-		height: 16px;
-		background: no-repeat center url("../../assets/icons/Auth.svg");
-		cursor: pointer;
+	@media (max-width: #{$medium - 1 + px}) {		
+		@include adaptive-value("column-gap", 20, 8, $medium, $small);
+		.login {
+			display: none;
+		}
 	}
 
 	.favorites {
-			@include flex();
-			column-gap: 6px;
-		
-			&__value {}
+		@include flex();
+		column-gap: 6px;
 	
-			&__icon {
-				width: 16px;
-				height: 16px;
-				background: no-repeat center url("../../assets/icons/favorites.svg");
-				cursor: pointer;
-			}
+		&__value {}
+
+		&__icon {
+			width: 16px;
+			height: 16px;
+			background: no-repeat center url("../../assets/icons/favorites.svg");
+			cursor: pointer;
+		}
 	}
 
 	.basket {
-		width: 16px;
-		height: 15px;
-		background: no-repeat center url("../../assets/icons/Basket.svg");
-		cursor: pointer;
+		@include flex();
+		column-gap: 6px;
+	
+		&__value {}
+
+		&__icon {
+			width: 16px;
+			height: 15px;
+			background: no-repeat center url("../../assets/icons/Basket.svg");
+			cursor: pointer;
+		}
 	}
 }
 
-
-
 .main-menu-container {
 	@include flex(center);	
+
+	@media (max-width: #{$medium - 1 + px}) {		
+		@include disabled;	
+		transform: translate(-100%);	
+		position: absolute;
+		z-index: 0;
+	}
 }
 
 @keyframes hovering {
@@ -129,12 +185,7 @@
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04);
 
 	&_disabled {
-		width: 0;
-		height: 0;
-		visibility: hidden;
-		opacity: 0;
-		padding: 0;		
-		transition: none;
+		@include disabled;
 	}
 	
 	transition: none;
