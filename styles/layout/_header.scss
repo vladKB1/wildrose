@@ -129,13 +129,17 @@
 .main-menu-container {
 	@include flex(center);	
 
-	@media (max-width: #{$medium - 1 + px}) {		
-		//@include disabled;	
-		//transform: translate(-1000%);	
-		
+	@media (max-width: #{$medium - 1 + px}) {							
 		position: absolute;
 		top: 48px;
 		left: 0;
+		transition: all 0.2s ease-in;
+		transform: translate(-100%);		
+
+		&_active {
+			transform: translate(0%);
+			transition: all 0.2s ease-in;			
+		}
 	}
 }
 
@@ -203,11 +207,9 @@
 		column-gap: 20px;
 		width: 320px;	
 
-		&__item {		
-			padding: 14px 12px 15px;					
-			
+		&__item {											
 			.item-title {
-				padding-bottom: 15px;
+				padding: 14px 12px 15px;					
 				border-bottom: 1px solid $border-bottom-color;		
 				.title {
 					&:hover {	
@@ -244,9 +246,10 @@
 
 .sub-menu-container {
 	position: absolute;
-	z-index: 0;
+	z-index: -1;
 	left: 0;
 	top: 93px;
+	transform: translateY(-200%);
 
 	@include flex(space-between);
 	margin: 0 auto;
@@ -257,20 +260,18 @@
 	background-color: $sub-menu-bg-color;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04);
 
-	&_disabled {
-		@include disabled;
+	&_active {
+		transform: translateY(0);
 	}
-	
-	transition: none;
 
-
-	@media (max-width: #{$medium - 1 + px}) {	
+	@media (max-width: #{$medium - 1 + px}) {			
 		position: static;
 		z-index: 2;					
 		@include flex(center, flex-start, column);
 		width: 100%;
 		padding: 0;	
 		box-shadow: none;					
+		transform: translateY(0);
 	}	
 }
 
@@ -283,7 +284,7 @@
 
 	cursor: pointer;
 
-	&__item {
+	&__item {				
 		.title:hover {
 			color: $title-hover-color;			
 			text-decoration: underline;
@@ -296,8 +297,9 @@
 		row-gap: 0;
 
 		&__item {
+			width: 100%;			
 			padding: 14px 12px 15px;
-			border-bottom: 1px solid $border-bottom-color;
+			border-bottom: 1px solid $border-bottom-color;		
 
 			.title:hover {
 				color: inherit;
