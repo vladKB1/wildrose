@@ -5,8 +5,8 @@
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 /* Убираем внутренние отступы */
@@ -343,18 +343,23 @@ body {
 @media (max-width: 767px) {
   .main-menu-container {
     position: absolute;
-    top: 48px;
     left: 0;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
     -webkit-transform: translate(-100%);
             transform: translate(-100%);
+    top: -100000%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    min-height: calc(100vh - 50px);
+    -webkit-transition: all 0.4s ease-in, top 0s;
+    transition: all 0.4s ease-in, top 0s;
   }
   .main-menu-container_active {
-    -webkit-transform: translate(0%);
-            transform: translate(0%);
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
+    top: 48px;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    -webkit-transition: all 0.4s ease-in, top 0s;
+    transition: all 0.4s ease-in, top 0s;
   }
 }
 
@@ -472,6 +477,13 @@ body {
             column-gap: 20px;
     width: 320px;
   }
+  .main-menu__item_active .item-title .title::after {
+    content: none;
+    width: 0;
+    height: 0;
+    -webkit-animation: none;
+            animation: none;
+  }
   .main-menu__item .item-title {
     padding: 14px 12px 15px;
     border-bottom: 1px solid #EAE8E4;
@@ -569,6 +581,7 @@ body {
             box-shadow: none;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+    overflow: hidden;
   }
 }
 
