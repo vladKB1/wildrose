@@ -1,0 +1,20 @@
+@mixin flex($content: flex-start, $align: center, $direction: row) {
+	display: flex;
+	justify-content: $content;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@mixin adaptive-value($property, $startSize, $minSize, $maxWidth, $minWidth) {
+	$addSize: $startSize - $minSize;	
+	#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth}));
+}
+
+@mixin disabled {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+	opacity: 0;
+	padding: 0;		
+	transition: none;
+}
