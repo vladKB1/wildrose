@@ -17,6 +17,9 @@ export function toggleBurger(target) {
 
 export function toggleBurgerSubMenu(target) {
   if (document.documentElement.clientWidth < 768) {
+    const itemTitle = target.querySelector('.item-title');
+    itemTitle.classList.toggle('item-title_active');
+
     const subMenu = target.querySelector('.sub-menu-container');
     if (subMenu.style.maxHeight !== '0px') {
       subMenu.style.maxHeight = 0 + 'px';

@@ -4,6 +4,7 @@ let isResize = false;
 
 export function resizeWindow() {
   const subMenus = header.querySelectorAll('.sub-menu-container');
+  const itemTitles = header.querySelectorAll('.item-title_active');
 
   if (document.documentElement.clientWidth < 768) {
     if (isResize) return;
@@ -16,6 +17,10 @@ export function resizeWindow() {
     isResize = false;
     subMenus.forEach((subMenu) => {
       subMenu.style.maxHeight = null;
+    });
+
+    itemTitles.forEach((itemTitle) => {
+      itemTitle.classList.remove('item-title_active');
     });
   }
 }
